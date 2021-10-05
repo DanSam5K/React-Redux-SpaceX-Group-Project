@@ -13,14 +13,12 @@ export const fetchMissions = async (dispatch) => {
   const fetched = await fetch(`${baseURL}`);
   const returnList = await fetched.json();
   const missions = [];
-  returnList.map((mission) =>
-    missions.push({
-      mission_id: mission.mission_id,
-      mission_name: mission.mission_name,
-      description: mission.description,
-      wikipedia: mission.wikipedia,
-    })
-  );
+  returnList.map((mission) => missions.push({
+    mission_id: mission.mission_id,
+    mission_name: mission.mission_name,
+    description: mission.description,
+    wikipedia: mission.wikipedia,
+  }));
   dispatch({
     type: ADD_MISSION,
     payload: missions,
@@ -35,7 +33,7 @@ const reducer = (state = initialState, action) => {
       return [...action.payload];
     case JOIN_OR_LEAVE_MISSION:
       currentMission = state.find(
-        (mission) => mission.mission_id === action.payload.mission_id
+        (mission) => mission.mission_id === action.payload.mission_id,
       );
       if (currentMission && currentMission.reserved) {
         newState = state.map((mission) => {
