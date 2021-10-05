@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
       );
       if (currentMission && currentMission.reserved) {
         newState = state.map((mission) => {
-          if (mission.mission_id !== action.payload.mission.id) return mission;
+          if (mission.mission_id !== action.payload.mission_id) return mission;
           return { ...mission, reserved: false };
         });
         return newState;
