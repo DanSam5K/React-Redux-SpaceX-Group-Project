@@ -4,6 +4,11 @@ const initialState = [];
 const ADD_MISSION = 'missions/ADD_MISSION';
 const JOIN_OR_LEAVE_MISSION = 'missions/JOIN_OR_LEAVE_MISSION';
 
+export const toggleMission = (mission) => ({
+  type: JOIN_OR_LEAVE_MISSION,
+  payload: mission,
+});
+
 export const fetchMissions = async (dispatch) => {
   const fetched = await fetch(`${baseURL}`);
   const returnList = await fetched.json();
