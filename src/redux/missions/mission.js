@@ -26,3 +26,33 @@ export const fetchMissions = async (dispatch) => {
     payload: missions,
   });
 };
+
+const reducer = (state = initialState, action) => {
+  let newState;
+  let currentMission;
+  switch (action.type) {
+    case ADD_MISSION:
+      return [...action.payload];
+    case JOIN_OR_LEAVE_MISSION:
+      currentMission = state.find(
+        (mission) => mission.mission_id === action.payload.mission_id
+      );
+      if (currentMission && currentMission.reserved) {
+        newState = state.map((mission) => {
+          if (mission.mission_id !== action.payload.mission.id) return mission;
+          return { ...mission, reserved: false };
+        });
+        return newState;
+      }
+      newState = state.map((mission) => {
+        if (mission.mission_id !== action.payload.mission_id) return mission;
+        return { ...mission, reserved: true };
+      });
+      return newState;
+    default:
+      return state;
+  }
+};
+
+export const missions = (state) => state.missionsReducer;
+export default reducer;
