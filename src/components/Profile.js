@@ -8,8 +8,9 @@ import {
   ListGroupItem,
   Button,
 } from 'react-bootstrap';
-import { missions, toggleMission } from '../redux/missions/mission';
-import { cancelReservation } from '../redux/rockets/rocket';
+import { toggleMission } from '../redux/missions/missionActionCreator';
+import { missions } from '../redux/missions/mission';
+import { cancelReservation } from '../redux/rockets/rocketActionCreator';
 
 const Profile = () => {
   const allMissions = useSelector(missions);

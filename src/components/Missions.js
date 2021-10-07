@@ -6,8 +6,8 @@ import {
 import {
   fetchMissions,
   toggleMission,
-  missions,
-} from '../redux/missions/mission';
+} from '../redux/missions/missionActionCreator';
+import { missions } from '../redux/missions/mission';
 
 const Missions = () => {
   const dispatch = useDispatch();

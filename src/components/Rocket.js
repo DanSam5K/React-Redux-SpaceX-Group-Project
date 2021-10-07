@@ -2,7 +2,10 @@ import { PropTypes } from 'prop-types';
 import { Badge, Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import '../assets/css/rocket.css';
-import { reserveRocket, cancelReservation } from '../redux/rockets/rocket';
+import {
+  reserveRocket,
+  cancelReservation,
+} from '../redux/rockets/rocketActionCreator';
 
 const Rocket = ({ rocket }) => {
   const dispatch = useDispatch();
