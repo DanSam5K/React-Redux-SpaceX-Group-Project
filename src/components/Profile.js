@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Card,
@@ -9,7 +8,9 @@ import {
   ListGroupItem,
   Button,
 } from 'react-bootstrap';
-import { missions, toggleMission } from '../redux/missions/mission';
+import { toggleMission } from '../redux/missions/missionActionCreator';
+import { missions } from '../redux/missions/mission';
+import { cancelReservation } from '../redux/rockets/rocketActionCreator';
 
 const Profile = () => {
   const allMissions = useSelector(missions);
@@ -42,6 +43,34 @@ const Profile = () => {
         </Button>
       </ListGroupItem>
     ));
+  const rocketState = useSelector((state) => state.rocketsReducer);
+  const reserveRockets = rocketState.filter((rocket) => rocket.reserved).length === 0 ? (
+    <ListGroupItem> No rockets reserved </ListGroupItem>
+  ) : (
+    rocketState
+      .filter((rocket) => rocket.reserved)
+      .map((rocket) => (
+        <ListGroupItem
+          key={rocket.id}
+          className="d-flex align-items-center justify-content-between"
+        >
+          <span>
+            {rocket.rocket_name}
+            <br />
+            <a href={rocket.wikipedia} target="blank">
+              Read more
+            </a>
+          </span>
+          <Button
+            variant="outline-danger"
+            id={rocket.rocket}
+            onClick={() => dispatch(cancelReservation(rocket.id))}
+          >
+            Cancel Reservation
+          </Button>
+        </ListGroupItem>
+      ))
+  );
   return (
     <Container fluid className="border-top w-100 pt-2">
       <Row>
@@ -60,7 +89,7 @@ const Profile = () => {
         <Col xs={12} md={6}>
           <h2>My Rockets</h2>
           <Card>
-            <ListGroup>reservedRockets</ListGroup>
+            <ListGroup>{reserveRockets}</ListGroup>
           </Card>
         </Col>
       </Row>

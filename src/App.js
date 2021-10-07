@@ -8,7 +8,7 @@ import {
 
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import Profile from './components/Profile';
