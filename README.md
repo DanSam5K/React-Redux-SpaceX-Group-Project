@@ -45,7 +45,7 @@ To get a local copy up and running follow these simple example steps.
 
 To get a local copy up and running follow these simple example steps.
 - Open terminal
-- Clone this project using the command `git clone https://github.com/DanSam5K/Webflix-Index.git`
+- Clone this project using the command `git clone https://github.com/DanSam5K/React-Redux-SpaceX-Group-Project.git`
 - `cd <clone>` folder
 - Run `npm install` to install all project dependencies
 - Run `npm start` in your local browser or using Live Server in Visual Studio Code.
@@ -58,17 +58,17 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
 - Linkedin: [dansamuel](https://www.linkedin.com/in/dansamuel/)
 
-👨‍💻 **Jose Alberto Arriaga Ramos**
+👨‍💻 **Azeez Rotimi Arigbabuwo**
 
-- GitHub: [@jaarkira](https://github.com/jaarkira )
-- Twitter: [@91_jaar](https://twitter.com/91_jaar )
-- LinkedIn: [Jose Arriaga](https://www.linkedin.com/in/jaar/)
+- Github: [@rotimiazeez](https://github.com/rotimiazeez)
+- Twitter: [@harzeyzh](https://twitter.com/Harzeyzh)
+- Linkedin: [@azeezrotimi019](https://www.linkedin.com/in/azeezrotimi019/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/DanSam5K/Webflix-Index/issues).
+Feel free to check the [issues page](hhttps://github.com/DanSam5K/React-Redux-SpaceX-Group-Project/issues).
 
 ## Show your support
 
