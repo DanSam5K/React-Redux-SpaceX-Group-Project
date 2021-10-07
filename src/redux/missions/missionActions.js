@@ -1,2 +1,2 @@
-export const ADD_MISSION = 'missions/ADD_MISSION';
-export const JOIN_OR_LEAVE_MISSION = 'missions/JOIN_OR_LEAVE_MISSION';
+export const ADD_MISSION = 'space-travellers/missions/ADD_MISSION';
+export const JOIN_MISSION = 'space-travellers/missions/JOIN_MISSION';
