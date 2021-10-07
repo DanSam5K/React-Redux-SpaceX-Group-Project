@@ -6,7 +6,7 @@ export const toggleMission = (mission) => ({
   payload: mission,
 });
 
-export const fetchMissions = async (dispatch) => {
+export const fetchMissions = () => async (dispatch) => {
   const fetchMissions = await fetch(`${missionBaseURL}`);
   const returnList = await fetchMissions.json();
   const missions = [];
