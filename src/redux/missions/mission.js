@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
       return [...action.payload];
     case actions.JOIN_MISSION:
       currentMission = state.find(
-        (mission) => mission.mission_id === action.payload.mission_id
+        (mission) => mission.mission_id === action.payload.mission_id,
       );
       if (currentMission && currentMission.reserved) {
         newState = state.map((mission) => {
