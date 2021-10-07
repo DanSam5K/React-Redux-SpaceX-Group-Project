@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -10,7 +9,7 @@ import {
 import { Provider } from 'react-redux';
 import store from './redux/configureStore';
 import Navbar from './components/Navbar';
-import Rockets from './pages/Rockets';
+import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import Profile from './components/Profile';
 

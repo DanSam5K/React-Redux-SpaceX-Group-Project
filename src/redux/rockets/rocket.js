@@ -1,69 +1,56 @@
-import {
-  RECEIVE_ROCKETS,
-  RECEIVE_ROCKET_RESERVE,
-  RECEIVE_ROCKET_RESERVE_CANCELLATION,
-} from '../actions/actions';
+const baseURL = 'https://api.spacexdata.com/v3/rockets';
+const FETCH_ROCKETS = 'space-travellers/rockets/FETCH_ROCKETS';
+const RESERVE_ROCKET = 'space-travellers/rockets/RESERVE_ROCKET';
+const CANCEL_RESERVATION = 'space-travellers/rockets/CANCEL_RESERVATION';
 
 const initialState = [];
 
-const Reducer = (state = initialState, action) => {
+export const fetchRockets = () => async (dispatch) => {
+  const fetched = await fetch(`${baseURL}`);
+  const list = await fetched.json();
+  const rockets = [];
+  list.map((rocket) => rockets.push({
+    id: rocket.rocket_id,
+    rocket_name: rocket.rocket_name,
+    description: rocket.description,
+    flickr_images: rocket.flickr_images,
+    wikipedia: rocket.wikipedia,
+  }));
+
+  dispatch({
+    type: FETCH_ROCKETS,
+    payload: rockets,
+  });
+};
+
+export const reserveRocket = (payload) => ({
+  type: RESERVE_ROCKET,
+  payload,
+});
+
+export const cancelReservation = (payload) => ({
+  type: CANCEL_RESERVATION,
+  payload,
+});
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case RECEIVE_ROCKETS: {
+    case FETCH_ROCKETS:
       return [...action.payload];
-    }
-    case RECEIVE_ROCKET_RESERVE: {
-      const { id } = action.reservation;
-      const newRockets = [];
-      const { rockets } = state;
-      if (rockets) {
-        if (rockets.length > 0) {
-          rockets.forEach((r) => {
-            if (r.rocket_id === id) {
-              const rocket = { ...r, reserved: true };
-              newRockets.push(rocket);
-            } else {
-              newRockets.push(r);
-            }
-          });
-        }
-      }
-      return {
-        rockets: newRockets,
-      };
-    }
-    case RECEIVE_ROCKET_RESERVE_CANCELLATION: {
-      const { id } = action.reservation;
-      const newRockets = [];
-      const { rockets } = state;
-      if (rockets) {
-        if (rockets.length > 0) {
-          rockets.forEach((r) => {
-            if (r.rocket_id === id) {
-              const {
-                // eslint-disable-next-line camelcase
-                rocket_id, flickr_images, rocket_name, description,
-              } = r;
-              const rocket = {
-                rocket_id,
-                flickr_images,
-                rocket_name,
-                description,
-              };
-              newRockets.push(rocket);
-            } else {
-              newRockets.push(r);
-            }
-          });
-        }
-      }
-      return {
-        rockets: newRockets,
-      };
-    }
+    case RESERVE_ROCKET:
+      return state.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: true };
+      });
+    case CANCEL_RESERVATION:
+      return state.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
     default:
       return state;
   }
 };
 
-export const rockets = (state) => state.rocketsReducer;
-export default rocketsReducer;
+export const rockets = (state) => state.rockets;
+export default reducer;

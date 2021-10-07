@@ -11,8 +11,7 @@ import {
   Button,
 } from 'react-bootstrap';
 import { missions, toggleMission } from '../redux/missions/mission';
-import { rockets } from '../redux/rockets/rocket';
-import { removeReservation } from '../redux/api/api';
+import { cancelReservation } from '../redux/rockets/rocket';
 
 // const Group = (data) => {
 //   const items = data.data;
@@ -64,29 +63,34 @@ const Profile = () => {
         </Button>
       </ListGroupItem>
     ));
-  const reserveRockets = rockets.filter((rocket) => rocket.reserved).length === 0
-    ? <ListGroupItem> No rockets reserved </ListGroupItem>
-    : rockets = rockets.filter((rocket) => rocket.reserved).map((rocket) => (
-      <ListGroupItem
-        key={rocket.rocket_id}
-        className="d-flex align-items-center justify-content-between"
-      >
-        <span>
-          {rocket.rocket_name}
-          <br />
-          <a href={rocket.wikipedia} target="blank">
-            Read more
-          </a>
-        </span>
-        <Button
-          variant="outline-danger"
-          id={rocket.rocket}
-          onClick={() => dispatch(removeReservation(rocket.rocket_id))}
+  const rocketState = useSelector((state) => state.rocketsReducer);
+  const reserveRockets = rocketState.filter((rocket) => rocket.reserved).length === 0 ? (
+    <ListGroupItem> No rockets reserved </ListGroupItem>
+  ) : (
+    rocketState
+      .filter((rocket) => rocket.reserved)
+      .map((rocket) => (
+        <ListGroupItem
+          key={rocket.id}
+          className="d-flex align-items-center justify-content-between"
         >
-          Cancel Reservation
-        </Button>
-      </ListGroupItem>
-    ));
+          <span>
+            {rocket.rocket_name}
+            <br />
+            <a href={rocket.wikipedia} target="blank">
+              Read more
+            </a>
+          </span>
+          <Button
+            variant="outline-danger"
+            id={rocket.rocket}
+            onClick={() => dispatch(cancelReservation(rocket.id))}
+          >
+            Cancel Reservation
+          </Button>
+        </ListGroupItem>
+      ))
+  );
   return (
     <Container fluid className="border-top w-100 pt-2">
       <Row>
@@ -105,9 +109,7 @@ const Profile = () => {
         <Col xs={12} md={6}>
           <h2>My Rockets</h2>
           <Card>
-            <ListGroup>
-              { reserveRockets }
-            </ListGroup>
+            <ListGroup>{reserveRockets}</ListGroup>
           </Card>
         </Col>
       </Row>

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const baseURL = 'https://api.spacexdata.com/v3/missions';
 const initialState = [];
 
