@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Space X Travelers Hub (React-Redux Group Project)
 
-## Available Scripts
+- In this project, we worked with the real live data from the SpaceX API, to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
-In the project directory, you can run:
+- The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section.
 
-### `yarn start`
+## My Profile
+The My Profile section displays all reserved rockets and space missions.
+![screenshot](./src/assets/images/my_profile_screenshot.png)
+## Missions
+The Missions section displays a list of current missions along with their brief description and participation status. There is also a button next to each mission that allows users to join the selected mission or leave the mission the user joined earlier.
+![screenshot](./src/assets/images/missions_screenshot.png)
+## Rockets
+The Rockets section displays a list of all available SpaceX rockets. Users can book each rocket by clicking the reservation button or cancel the previously made booking.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![screenshot](./src/assets/images/rockets_screenshot.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `yarn test`
+- JavaScript ES6
+- JSX
+- HTML & CSS
+- Bootstrap
+- React and Redux
+- Git and Github flow
+- VSCode
+- Linter Checkers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ## Deployment Live Demo
 
-### `yarn build`
+ - Deployed with gh-pages
+  - [Live Demo](https://dansam5k.github.io/Webflix-Index/index.html) -->
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy up and running follow these simple example steps.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- IDE to edit and run the code (We use Visual Studio Code 🔥).
+- [Node.js](https://nodejs.org/en/download/) already downloaded.
 
-### `yarn eject`
+### Install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get a local copy up and running follow these simple example steps.
+- Open terminal
+- Clone this project using the command `git clone https://github.com/DanSam5K/Webflix-Index.git`
+- `cd <clone>` folder
+- Run `npm install` to install all project dependencies
+- Run `npm start` in your local browser or using Live Server in Visual Studio Code.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author 👤 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+👨‍💻 **Daniel Samuel**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Github: [DanSam5k](https://github.com/DanSam5k)
+- Twitter: [@_dan_sam](https://twitter.com/_dan_sam)
+- Linkedin: [dansamuel](https://www.linkedin.com/in/dansamuel/)
 
-## Learn More
+👨‍💻 **Jose Alberto Arriaga Ramos**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [@jaarkira](https://github.com/jaarkira )
+- Twitter: [@91_jaar](https://twitter.com/91_jaar )
+- LinkedIn: [Jose Arriaga](https://www.linkedin.com/in/jaar/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Code Splitting
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Feel free to check the [issues page](https://github.com/DanSam5K/Webflix-Index/issues).
 
-### Analyzing the Bundle Size
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Give a ⭐️ if you like this project!
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
+- Hat tip to anyone whose code was used 🔰
+- Inspiration 💘
+- Microverse program ⚡
+- Our standup team 🏹
+- Our family's support 🙌
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE) licensed.
