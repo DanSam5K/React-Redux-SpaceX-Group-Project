@@ -4,11 +4,15 @@ import { Table, Container } from 'react-bootstrap';
 import { fetchMissions } from '../redux/missions/missionActionCreator';
 import Mission from './Mission';
 
+let initialize = true;
 const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMissions());
+    if (initialize) {
+      dispatch(fetchMissions());
+      initialize = false;
+    }
   }, []);
 
   return (
