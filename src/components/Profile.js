@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-// import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Card,
@@ -13,26 +11,7 @@ import {
 import { missions, toggleMission } from '../redux/missions/mission';
 import { cancelReservation } from '../redux/rockets/rocket';
 
-// const Group = (data) => {
-//   const items = data.data;
-//   return items.map((g) => (
-//     <div key={g.title} className="reservation">
-//       <h5 className="reservation-item-name">{g}</h5>
-//     </div>
-//   ));
-// };
-
 const Profile = () => {
-  // const [rocketsDisplay, setRocketsDisplay] = useState(null);
-  // const reservations = useSelector((state) => state.reservationsReducer.reservations);
-
-  // useEffect(() => {
-  //   const { rockets } = reservations;
-  //   if (rockets.length > 0) {
-  //     setRocketsDisplay(rockets);
-  //   }
-  // });
-
   const allMissions = useSelector(missions);
   const dispatch = useDispatch();
 
