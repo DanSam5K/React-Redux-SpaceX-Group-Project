@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+.stylelintrc.json
+package-lock.json
 
 # production
 /build

@@ -1,0 +1,9 @@
+.link.active {
+  text-decoration: underline;
+  border-bottom: 2px solid rgb(204, 107, 228);
+}
+
+.img-logo {
+  display: inline-block;
+  width: 3rem;
+}
