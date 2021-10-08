@@ -56,7 +56,7 @@ export default Rocket;
 
 Rocket.propTypes = {
   rocket: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     rocket_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

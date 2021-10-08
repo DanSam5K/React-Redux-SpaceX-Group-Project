@@ -2,11 +2,11 @@ import * as actions from './missionActions';
 import { missionBaseURL } from '../apis';
 
 export const toggleMission = (mission) => ({
-  type: actions.JOIN_OR_LEAVE_MISSION,
+  type: actions.JOIN_MISSION,
   payload: mission,
 });
 
-export const fetchMissions = async (dispatch) => {
+export const fetchMissions = () => async (dispatch) => {
   const fetchMissions = await fetch(`${missionBaseURL}`);
   const returnList = await fetchMissions.json();
   const missions = [];
