@@ -15,7 +15,7 @@ describe('Components Snapshots test', () => {
           <BrowserRouter>
             <Missions />
           </BrowserRouter>
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(UIMissions).toMatchSnapshot();
@@ -28,7 +28,7 @@ describe('Components Snapshots test', () => {
           <BrowserRouter>
             <Rockets />
           </BrowserRouter>
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(UIRockets).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('Components Snapshots test', () => {
           <BrowserRouter>
             <Profile />
           </BrowserRouter>
-        </Provider>
+        </Provider>,
       )
       .toJSON();
     expect(UIProfile).toMatchSnapshot();
